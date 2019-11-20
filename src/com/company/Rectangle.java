@@ -11,11 +11,9 @@ public class Rectangle extends Figure {
         super.draw(g);
         if(width > 0 && height > 0) {
             drawRectangle(x, y, width, height, g);
-
         }
         else if(width < 0 && height < 0){
             drawRectangle(x+width, y+height,-width, -height, g);
-
         }
         else if( width < 0 && height > 0){
             drawRectangle(x+width, y, -width, height, g);
@@ -24,8 +22,8 @@ public class Rectangle extends Figure {
             drawRectangle(x, y+height, width, -height, g);
         }
     }
-    public void drawRectangle(int x, int y, int width, int height, Graphics g) {
 
+    public void drawRectangle(int x, int y, int width, int height, Graphics g) {
         g.setColor(fillColor);
         g.fillRect(x, y, width, height);
         g.setColor(color);

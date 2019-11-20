@@ -48,45 +48,40 @@ public class ToolBox {
     public JToolBar createControls(Panel panel) {
         this.panel = panel;
 
-        //create controls to apply colors and call clear feature
         JToolBar controls = new JToolBar();
 
         arrowBtn = new JButton(" ");
-        arrowBtn.setIcon(new ImageIcon("C:\\Users\\Bruker\\Desktop\\Pil.png"));
-        //"C:\\Users\\Bruker\\Desktop\\Pil.png"
+        arrowBtn.setIcon(new ImageIcon("./resources/images/Pil.png"));
         arrowBtn.addActionListener(actionListener);
 
         pencilBtn = new JButton(" ");
-        pencilBtn.setIcon(new ImageIcon("C:\\Users\\Bruker\\Desktop\\Pencil.png"));
-        //       pencilBtn.setIcon(new ImageIcon("./resources/images/Pencil.png"));
+        pencilBtn.setIcon(new ImageIcon("./resources/images/Pencil.png"));
         pencilBtn.addActionListener(actionListener);
 
         rectangleBtn = new JButton(" ");  //byt ut rectangle till bild
-        rectangleBtn.setIcon(new ImageIcon("C:\\Users\\Bruker\\Desktop\\Rectangle.png"));
-        //rectangleBtn.add(rectangleBtn);
-        //add(rectangleBtn);
+        rectangleBtn.setIcon(new ImageIcon("./resources/images/Rectangle.png"));
         rectangleBtn.addActionListener(actionListener);
 
         ovalBtn = new JButton(" ");
-        ovalBtn.setIcon(new ImageIcon("C:\\Users\\Bruker\\Desktop\\Oval.png"));
+        ovalBtn.setIcon(new ImageIcon("./resources/images/Oval.png"));
         ovalBtn.addActionListener(actionListener);
 
         polygonBtn = new JButton(" ");
-        polygonBtn.setIcon(new ImageIcon("C:\\Users\\Bruker\\Desktop\\Polygon.png"));
+        polygonBtn.setIcon(new ImageIcon("./resources/images/Polygon.png"));
         polygonBtn.addActionListener(actionListener);
 
         drawLineBtn = new JButton(" ");
-        drawLineBtn.setIcon(new ImageIcon("C:\\Users\\Bruker\\Desktop\\DrawLine.png"));
+        drawLineBtn.setIcon(new ImageIcon("./resources/images/DrawLine.png"));
         drawLineBtn.addActionListener(actionListener);
 
 
         graphicBtn = new JButton(" ");
-        graphicBtn.setIcon(new ImageIcon("C:\\Users\\Bruker\\Desktop\\Grapich.png"));
+        graphicBtn.setIcon(new ImageIcon("./resources/images/Grapich.png"));
         graphicBtn.addActionListener(actionListener);
 
 
         colorsBtn = new JButton(" ");
-        colorsBtn.setIcon(new ImageIcon("C:\\Users\\Bruker\\Desktop\\Colors.png"));
+        colorsBtn.setIcon(new ImageIcon("./resources/images/Colors.png"));
         colorsBtn.addActionListener(actionListener);
 
         blackBtn = new JButton(" ");
@@ -106,20 +101,17 @@ public class ToolBox {
         blueBtn.addActionListener(actionListener);
 
         fillColorBtn =new JButton(" ");
-        fillColorBtn.setIcon(new ImageIcon("C:\\Users\\Bruker\\Desktop\\Fillcolor.png"));
+        fillColorBtn.setIcon(new ImageIcon("./resources/images/Fillcolor.png"));
         fillColorBtn.addActionListener(actionListener);
 
-        backgroundBtn = new JButton("Background color");
+        backgroundBtn = new JButton(" ");
+        backgroundBtn.setIcon(new ImageIcon("./resources/images/Background.png"));
         backgroundBtn.addActionListener(actionListener);
 
         clearBtn = new JButton(" ");
-        clearBtn.setIcon(new ImageIcon("C:\\Users\\Bruker\\Desktop\\Papperskorg.png"));
+        clearBtn.setIcon(new ImageIcon("./resources/images/Papperskorg.png"));
         clearBtn.addActionListener(actionListener);
 
-
-
-
-        //add to panel
         controls.setLayout(new GridLayout(0,1));
         controls.add(arrowBtn);
         controls.add(pencilBtn);
@@ -136,7 +128,6 @@ public class ToolBox {
         controls.add(fillColorBtn);
         controls.add(backgroundBtn);
         controls.add(clearBtn);
-
         return controls;
     }
 }

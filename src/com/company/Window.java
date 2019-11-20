@@ -5,9 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Window extends JFrame {
-
     public Window() {
-
         JLabel l = new JLabel();
         JMenuBar mb = new JMenuBar();
 
@@ -50,12 +48,10 @@ public class Window extends JFrame {
         setLocation(50, 50);
 
         Panel panel = new Panel();
-
         ToolBox toolbox = new ToolBox();
         JToolBar controls = toolbox.createControls(panel);
         Container content = getContentPane();
         content.setLayout(new BorderLayout());
-        //add(controls);
         content.add(controls, BorderLayout.WEST);
         add(panel);
         panel.addMouseListener(panel);

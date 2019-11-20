@@ -29,9 +29,7 @@ public class Pencil extends Figure {
             int y1 = yList.get(i);
             int x2 = xList.get(i+1);
             int y2 = yList.get(i+1);
-
             g.drawLine(x1, y1, x2, y2);
-
         }
     }
 }

@@ -7,7 +7,6 @@ public class GraphicLines extends Pencil {
 
     public GraphicLines(Color color) {
         super(color);
-
     }
 
     public void draw(Graphics g) {
@@ -22,19 +21,7 @@ public class GraphicLines extends Pencil {
             int y1 = yList.get(0);
             int x2 = xList.get(i+1);
             int y2 = yList.get(i+1);
-
             g.drawLine(x1, y1, x2, y2);
-
-
         }
     }
-
-
-   /* public void draw(Graphics g) {
-        super.draw(g);
-        g.drawLine(lastPoint.x, lastPoint.y, x, y);
-        g.dispose();
-    }*/
-
-
 }

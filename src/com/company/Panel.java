@@ -6,8 +6,6 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.awt.event.KeyEvent;
 
-
-
 public class Panel extends JPanel
         implements MouseListener, MouseMotionListener, KeyListener {
     ArrayList<Figure> figures = new ArrayList<Figure>();
@@ -16,15 +14,12 @@ public class Panel extends JPanel
     Color color = Color.black;
     Color background = Color.white;
 
-
     private Image image;
     private Graphics2D g2;
     private int currentX, currentY, oldX, oldY;
     private Point lastPoint;
 
-
     enum ToolSelection {
-        ARROW,
         RECTANGLE,
         OVAL,
         POLYGON,
@@ -47,26 +42,6 @@ public class Panel extends JPanel
                 lastPoint = new Point(e.getX(), e.getY());
             }
         });
-
-        /*addMouseMotionListener(new MouseMotionAdapter() {
-            public void mouseDragged(MouseEvent e) {
-                currentX=e.getX();
-                currentY=e.getY();
-
-                Graphics g = getGraphics();
-                g.drawLine(lastPoint.x, lastPoint.y, e.getX(), e.getY());
-                g.dispose();
-
-
-
-                if(g2 !=null) {
-                    g2.drawLine(oldX, oldY, currentX, currentY);
-                    repaint();
-                    oldX=currentX;
-                    oldY=currentY;
-                }
-            }
-        });*/
     }
 
     public void paintComponent(Graphics g) {
@@ -97,11 +72,7 @@ public class Panel extends JPanel
     public void mousePressed(MouseEvent e) {
         clickX = e.getX();
         clickY = e.getY();
-        if(toolSelection == toolSelection.ARROW) {
-            Figure arrow1 = new Arrow(color);
-            addFigure(arrow1);
-        }
-        else if (toolSelection == toolSelection.RECTANGLE) {
+        if (toolSelection == toolSelection.RECTANGLE) {
             Figure rectangle1 = new Rectangle(clickX, clickY, 0, 0, color);
             addFigure(rectangle1);
         }
@@ -133,9 +104,6 @@ public class Panel extends JPanel
     public void mouseDragged(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
-        //if (e.isShiftDown()) {
-        //getGraphics().drawRect(10, 10, 10, 10);
-        //}
 
         if(toolSelection == ToolSelection.PENCIL || toolSelection == ToolSelection.GRAPHIC) {
             Figure figure1 = figures.get(figures.size() - 1);
@@ -149,11 +117,8 @@ public class Panel extends JPanel
             int height = y - clickY;
             figure1.setWidth(width);
             figure1.setHeight(height);
-            //this.repaint();
         }
         this.repaint();
-
-
     }
 
     public void mouseMoved(MouseEvent e) {}
@@ -162,12 +127,9 @@ public class Panel extends JPanel
     public void keyReleased(KeyEvent e) {}
 
     public void arrow() {
-        toolSelection = ToolSelection.ARROW;
-
     }
 
     public void clear() {
-
         figures.clear();
         background = Color.white;
         repaint();
@@ -175,28 +137,24 @@ public class Panel extends JPanel
 
     public void colors() {
         Color newColor = JColorChooser.showDialog(this, "Choose a color", color);
-        if (newColor != null) { // new color selected
+        if (newColor != null) {
             color = newColor;
         }
     }
-
 
     public void yellow() {
         color = Color.yellow;
     }
 
     public void black() {
-        //g2.setPaint(Color.black);
         color = Color.black;
     }
 
     public void green() {
-        //g2.setPaint(Color.green);
         color = Color.green;
     }
 
     public void blue() {
-        //g2.setPaint(Color.blue);
         color = Color.blue;
     }
 
@@ -204,9 +162,7 @@ public class Panel extends JPanel
     public void background() {
         background = color;
         setOpaque(true);
-
         repaint();
-
     }
 
     public void fillcolor() {
@@ -215,7 +171,6 @@ public class Panel extends JPanel
             figure.setFillColor(color);
             repaint();
         }
-
     }
 
     public void rectangle() {

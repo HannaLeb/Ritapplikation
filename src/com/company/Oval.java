@@ -10,17 +10,23 @@ public class Oval extends Figure {
     public void draw(Graphics g) {
         super.draw(g);
         if(width > 0 && height > 0) {
-            g.drawOval(x, y, width, height);
+            DrawOval(x, y, width, height, g);
         }
         else if(width < 0 && height < 0){
-            g.drawOval(x+width, y+height,-width, -height);
+            DrawOval(x+width, y+height,-width, -height, g);
         }
         else if( width < 0 && height > 0){
-            g.drawOval(x+width, y, -width, height);
+            DrawOval(x+width, y, -width, height, g);
         }
         else if(width > 0 && height < 0) {
-            g.drawOval(x, y+height, width, -height);
+            DrawOval(x, y+height, width, -height, g);
         }
+    }
 
+    public void DrawOval(int x, int y, int width, int height, Graphics g) {
+        g.setColor(fillColor);
+        g.fillOval(x,y, width, height);
+        g.setColor(color);
+        g.drawOval(x, y, width, height);
     }
 }

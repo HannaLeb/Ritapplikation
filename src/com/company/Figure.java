@@ -10,7 +10,6 @@ public class Figure {
     Color color;
     Color fillColor;
 
-
     public Figure(int x, int y, int width, int height, Color color) {
         this.x = x;
         this.y = y;
@@ -32,7 +31,6 @@ public class Figure {
         Graphics2D g2 = (Graphics2D) g;
         g.setColor(color);
         g2.setStroke(new BasicStroke(8));
-
     }
 
     public void setFillColor(Color color) {
